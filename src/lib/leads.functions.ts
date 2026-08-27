@@ -34,7 +34,7 @@ export const submitLead = createServerFn({ method: "POST" })
     }
 
     const res = await fetch(
-      `${GATEWAY_URL}/spreadsheets/${spreadsheetId}/values/A:D:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS`,
+      `${GATEWAY_URL}/spreadsheets/${spreadsheetId}/values/'무빙패스_한번에신청'!A:D:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS`,
       {
         method: "POST",
         headers: {
