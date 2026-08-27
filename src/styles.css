@@ -175,5 +175,5 @@
 }
 
 .animate-cta-blink {
-  animation: cta-blink 1.6s infinite;
+  animation: cta-blink 0.5s infinite;
 }
