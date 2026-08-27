@@ -127,9 +127,9 @@ function Index() {
 
           <div>
             <p className="text-[15px] font-bold text-ink">
-              관심 있는 서비스 <span className="text-brand">*</span>
+              필요한 서비스 <span className="text-brand">*</span>
             </p>
-            <p className="mt-1 text-[13px] text-ink-sub">복수 선택할 수 있어요</p>
+            <p className="mt-1 text-[13px] text-ink-sub">필요한 서비스를 모두 고르시면 무빙플래너가 한번에 알아봐 드릴게요</p>
             <div className="mt-3 space-y-2.5">
               {SERVICES.map((s) => (
                 <ServiceCard
