@@ -79,14 +79,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "한번에 신청하기 | 오늘의집 무빙플래너" },
+      { name: "description", content: "이사·청소·인테리어·인터넷·가전렌탈까지, 필요한 서비스만 고르면 전담 무빙플래너가 한번에 신청해드려요." },
+      { name: "author", content: "오늘의집" },
+      { property: "og:title", content: "한번에 신청하기 | 오늘의집 무빙플래너" },
+      { property: "og:description", content: "필요한 서비스만 고르면 전담 플래너가 상담부터 접수까지 대신 해드려요." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:site", content: "@ohouse" },
     ],
     links: [
       {
@@ -97,7 +97,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
     ],
   }),
 
