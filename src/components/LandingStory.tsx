@@ -62,7 +62,7 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
         <button
           type="button"
           onClick={onCtaClick}
-          className="mt-7 inline-flex h-14 w-full items-center justify-center gap-1 rounded-full bg-brand text-[17px] font-bold text-brand-foreground"
+          className="mx-auto mt-7 inline-flex h-14 w-[calc(100%-32px)] max-w-[358px] items-center justify-center gap-1 rounded-full bg-brand text-[17px] font-bold text-brand-foreground"
         >
           지금 무료로 견적 받기
           <ChevronRight className="size-4" />
