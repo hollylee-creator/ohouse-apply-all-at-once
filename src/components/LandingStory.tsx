@@ -1,4 +1,6 @@
 import { Info, Search, Calendar, MessageSquare, ChevronRight } from "lucide-react";
+import kakaoChatAsset from "@/assets/kakao-chat.png.asset.json";
+
 
 /** 에셋이 준비되면 src 경로만 교체하면 되는 슬롯 */
 function AssetSlot({
@@ -131,36 +133,13 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
           이제 무빙플래너에게 그냥 맡기세요.
         </p>
 
-        <div className="mt-6 rounded-2xl bg-[#9aa8c4] px-3.5 py-5">
-          <p className="mx-auto w-fit rounded-full bg-black/25 px-3 py-1 text-[11px] font-bold text-white">
-            무빙플래너 채널
-          </p>
-          <div className="mt-4 space-y-3">
-            <div className="flex gap-2">
-              <div className="size-8 shrink-0 rounded-full bg-brand" />
-              <div>
-                <p className="text-[11px] text-white/90">오늘의집 무빙플래너</p>
-                <p className="mt-1 rounded-xl rounded-tl-sm bg-white px-3 py-2.5 text-[13px] leading-[1.5] text-ink">
-                  이사 3주 전에는 입주청소부터 미리 예약해 두는 게 좋아요! 이사하시는 주소로
-                  청소 업체 견적 먼저 대신 신청해 드릴게요!
-                </p>
-              </div>
-            </div>
-            <div className="flex justify-end">
-              <p className="max-w-[80%] rounded-xl rounded-tr-sm bg-[#fae64d] px-3 py-2.5 text-[13px] leading-[1.5] text-ink">
-                감사합니다! 견적 신청 후 매칭되면 제가 알 수 있는 걸까요?
-              </p>
-            </div>
-            <div className="flex gap-2">
-              <div className="size-8 shrink-0 rounded-full bg-brand" />
-              <p className="rounded-xl rounded-tl-sm bg-white px-3 py-2.5 text-[13px] leading-[1.5] text-ink">
-                당연하죠! 매칭된 업체를 고객님께 톡으로 먼저 알려드리고, 맞춤 일정표에서도
-                확인하실 수 있어요 😊 신청을 위해 청소할 공간 정보 몇 가지만 알려주시면
-                돼요!
-              </p>
-            </div>
-          </div>
-        </div>
+        <img
+          src={kakaoChatAsset.url}
+          alt="무빙플래너 채널 카카오톡 상담 예시"
+          loading="lazy"
+          className="mt-6 w-full rounded-2xl"
+        />
+
       </section>
 
       {/* 일정표 섹션 */}
