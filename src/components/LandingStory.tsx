@@ -77,10 +77,10 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
           <button
             type="button"
             onClick={onCtaClick}
-            className="mx-auto mt-7 flex h-14 w-[calc(100%-40px)] max-w-[340px] items-center justify-center rounded-3xl bg-brand px-6 text-[17px] font-bold text-brand-foreground"
+            className="mx-auto mt-7 flex h-14 w-[calc(100%-40px)] max-w-[340px] items-center justify-center rounded-[22px] bg-brand px-6 text-[17px] font-bold text-brand-foreground"
           >
             지금 무료로 견적 받기
-            <span className="ml-1">&gt;</span>
+            <span className="ml-2">&gt;</span>
           </button>
 
           <img
