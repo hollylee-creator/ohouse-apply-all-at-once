@@ -1,4 +1,4 @@
-import { Info, Search, Calendar, MessageSquare, ChevronRight } from "lucide-react";
+import { Info, Search, Calendar, MessageSquare, ChevronRight, Gift } from "lucide-react";
 import kakaoChatAsset from "@/assets/kakao-chat.png.asset.json";
 import movingCharacterAsset from "@/assets/moving-character.png.asset.json";
 import iconInteriorAsset from "@/assets/icon-interior.png.asset.json";
@@ -150,57 +150,146 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
           놓치기 쉬운 일들을 이사 날짜에 맞춰 알려드려요!
         </p>
 
-        <div className="mt-6 overflow-hidden rounded-2xl border border-border bg-background shadow-sm">
-          <div className="flex items-center justify-between border-b border-border px-4 py-3">
-            <span className="text-[12px] font-bold text-brand">오늘의집 무빙플래너</span>
-            <span className="text-[11px] text-ink-sub">상담중</span>
-          </div>
-          <div className="px-4 py-4">
-            <p className="text-[15px] font-bold text-ink">나의 새집맞이 일정표</p>
-            <p className="mt-1 text-[11px] text-ink-sub">
-              시급하지 않아도 필요한 준비, 무빙플래너가 한눈에 정리해 드려요
-            </p>
-
-            <div className="mt-3 rounded-xl bg-brand-soft px-4 py-3">
-              <div className="flex items-baseline gap-2">
-                <span className="text-[26px] font-extrabold text-brand">D-59</span>
-                <span className="text-[11px] text-ink-sub">
-                  이사 예정일
-                  <br />
-                  8월 28일(금)
+        {/* 일정표 목업 — 상단만 보이고 아래로 페이드아웃 */}
+        <div className="relative mt-6 overflow-hidden rounded-2xl border border-border bg-background shadow-sm">
+          <div className="px-4 pb-10 pt-4">
+            {/* 상단 헤더 */}
+            <div className="flex items-center justify-between">
+              <span className="inline-flex items-center gap-1 rounded-full border border-brand px-2.5 py-1 text-[11px] font-bold text-brand">
+                <span className="flex size-3.5 items-center justify-center rounded-sm bg-brand text-[8px] font-extrabold text-brand-foreground">
+                  ㅇ
                 </span>
-              </div>
+                오늘의집 무빙플래너
+              </span>
+              <span className="inline-flex items-center rounded-full bg-brand-soft px-2.5 py-1 text-[11px] font-bold text-brand">
+                상담전
+              </span>
             </div>
 
-            <div className="mt-3 flex items-center justify-between border-t border-border pt-3 text-[12px]">
-              <span className="text-ink-sub">신청 현황</span>
-              <span className="font-bold text-brand">1 / 16 완료</span>
+            {/* 타이틀 */}
+            <p className="mt-4 text-[22px] font-extrabold tracking-tight text-ink">
+              나의 <span className="text-brand">새집맞이 일정표</span>
+            </p>
+            <div className="mt-2 flex items-baseline gap-2">
+              <span className="text-[26px] font-extrabold text-brand">D-20</span>
+              <span className="text-[13px] font-bold text-ink">9월 16일(수)</span>
             </div>
 
-            <div className="mt-3 rounded-xl border border-border p-3">
-              <div className="flex items-center justify-between text-[11px] text-ink-sub">
-                <span className="font-bold text-ink">🚚 서비스 예약·방문</span>
-                <span>D-45 ~ D-29</span>
-              </div>
-              <div className="mt-3 flex gap-2">
-                <span className="mt-0.5 size-4 shrink-0 rounded-full border border-border" />
-                <div>
-                  <p className="text-[10px] text-ink-sub">7월 19일(토) · D-59</p>
-                  <p className="text-[13px] font-bold text-ink">이사 업체 견적 예약</p>
-                  <p className="mt-1 text-[11px] leading-[1.5] text-ink-sub">
-                    성수기엔 원하는 날짜가 빠르게 마감되니 미리 견적을 받아보세요
-                  </p>
-                  <button
-                    type="button"
-                    onClick={onCtaClick}
-                    className="mt-2 inline-flex h-8 items-center rounded-lg bg-brand px-3 text-[12px] font-bold text-brand-foreground"
-                  >
-                    무료 견적받기
-                  </button>
+            {/* 전체 진행바 */}
+            <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-muted">
+              <div className="h-full w-[35%] rounded-full bg-brand" />
+            </div>
+            <div className="mt-1.5 flex items-center justify-between text-[12px]">
+              <span className="text-ink-sub">진행 상황</span>
+              <span className="font-bold text-ink">
+                <span className="text-brand">6</span> / 17 완료
+              </span>
+            </div>
+
+            {/* 무빙플래너 대행 */}
+            <div className="mt-4 flex items-center justify-between border-t border-border pt-4">
+              <span className="text-[13px] font-bold text-ink">
+                무빙플래너 대행 <span className="text-brand">1/3</span>
+              </span>
+              <span className="text-[10px] text-ink-sub">
+                신청 전 · 신청완료 · 매칭중 · 매칭완료
+              </span>
+            </div>
+
+            <ul className="mt-3 space-y-3">
+              <li>
+                <div className="flex items-center justify-between">
+                  <span className="flex items-center gap-2 text-[13px] text-ink">
+                    <span className="size-4 rounded border border-border" />
+                    청소 견적 신청하기
+                  </span>
+                  <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-bold text-emerald-600">
+                    매칭완료
+                  </span>
                 </div>
+                <div className="mt-1.5 flex gap-1">
+                  <span className="h-1.5 flex-1 rounded-full bg-emerald-500" />
+                  <span className="h-1.5 flex-1 rounded-full bg-emerald-500" />
+                  <span className="h-1.5 flex-1 rounded-full bg-emerald-500" />
+                </div>
+              </li>
+              <li>
+                <div className="flex items-center justify-between">
+                  <span className="flex items-center gap-2 text-[13px] text-ink">
+                    <span className="size-4 rounded border border-border" />
+                    종합시공 견적 신청하기
+                  </span>
+                  <span className="rounded-full bg-brand-soft px-2 py-0.5 text-[10px] font-bold text-brand">
+                    매칭대기
+                  </span>
+                </div>
+                <div className="mt-1.5 flex gap-1">
+                  <span className="h-1.5 flex-1 rounded-full bg-brand" />
+                  <span className="h-1.5 flex-1 rounded-full bg-muted" />
+                  <span className="h-1.5 flex-1 rounded-full bg-muted" />
+                </div>
+              </li>
+              <li>
+                <div className="flex items-center justify-between">
+                  <span className="flex items-center gap-2 text-[13px] text-ink">
+                    <span className="text-brand">✳</span>
+                    오늘의집 시공 견적 신청하기
+                  </span>
+                  <span className="rounded-full bg-muted px-2 py-0.5 text-[10px] font-bold text-ink-sub">
+                    신청 전
+                  </span>
+                </div>
+                <div className="mt-1.5 flex gap-1">
+                  <span className="h-1.5 flex-1 rounded-full bg-muted" />
+                  <span className="h-1.5 flex-1 rounded-full bg-muted" />
+                  <span className="h-1.5 flex-1 rounded-full bg-muted" />
+                </div>
+              </li>
+            </ul>
+
+            {/* 직접 진행 */}
+            <div className="mt-4 flex items-center justify-between rounded-xl bg-orange-50 px-4 py-3">
+              <span className="text-[13px] font-bold text-ink">
+                직접 진행 <span className="text-orange-500">5/14</span>
+              </span>
+              <span className="flex items-center text-[12px] font-bold text-orange-500">
+                전체보기
+                <ChevronRight className="size-3.5" />
+              </span>
+            </div>
+
+            {/* 완주 보너스 */}
+            <div className="mt-2.5 flex items-center gap-2 rounded-xl bg-muted px-4 py-3.5 text-[13px] font-medium text-ink-sub">
+              <Gift className="size-4" />
+              완주 보너스
+              <span className="text-ink-sub/60">?</span>
+            </div>
+
+            {/* 대행 진행 카드 (일부만 노출) */}
+            <div className="mt-4 rounded-2xl bg-brand-soft p-4">
+              <span className="inline-flex rounded-md bg-brand px-1.5 py-0.5 text-[10px] font-extrabold text-brand-foreground">
+                대행
+              </span>
+              <p className="mt-1.5 text-[15px] font-bold text-ink">
+                무빙플래너가 대신 진행 중이에요
+              </p>
+              <p className="mt-1 text-[12px] leading-[1.5] text-ink-sub">
+                신청하신 서비스의 진행 상태예요. 매칭 상태는 무빙플래너가 관리해요.
+              </p>
+              <div className="mt-3 rounded-xl border-l-4 border-emerald-500 bg-background px-4 py-3.5">
+                <div className="flex items-center justify-between">
+                  <span className="text-[14px] font-bold text-ink">청소 견적 신청하기</span>
+                  <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-bold text-emerald-600">
+                    매칭완료
+                  </span>
+                </div>
+                <p className="mt-1 text-[12px] text-ink-sub">매칭이 끝났어요.</p>
               </div>
             </div>
           </div>
+
+          {/* 페이드아웃 오버레이 */}
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-56 bg-gradient-to-b from-transparent via-background/80 to-background" />
         </div>
       </section>
     </div>
