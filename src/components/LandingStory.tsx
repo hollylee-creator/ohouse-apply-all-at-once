@@ -126,7 +126,7 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
 
       {/* 채팅 섹션 */}
       <section className="px-5 py-12">
-        <h2 className="text-[22px] font-extrabold leading-[1.35] text-ink">
+        <h2 className="text-[22px] font-bold leading-[1.35] text-ink">
           무빙플래너가 전부 대신 해드려요
         </h2>
         <p className="mt-3 text-[14px] leading-[1.6] text-ink-sub">
@@ -145,7 +145,7 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
 
       {/* 일정표 섹션 */}
       <section className="bg-brand-softer px-5 py-12">
-        <h2 className="text-[22px] font-extrabold leading-[1.35] text-ink">
+        <h2 className="text-[22px] font-bold leading-[1.35] text-ink">
           맞춤 일정표로, 놓치는 일 없이!
         </h2>
         <p className="mt-3 text-[14px] leading-[1.6] text-ink-sub">
