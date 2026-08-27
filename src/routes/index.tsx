@@ -90,7 +90,7 @@ function Index() {
       <LandingStory onCtaClick={scrollToForm} />
       <main className="w-full">
         {/* Form */}
-        <section className="bg-gradient-to-b from-background via-brand-soft/80 to-brand-soft/95 py-10">
+        <section className="bg-gradient-to-b from-background via-brand-soft/80 to-brand-soft/95 py-10 pb-28">
           <div className="mx-auto w-full max-w-[430px] px-5">
             <h2 className="text-[22px] font-bold text-ink">
               지금 무료로 견적 받기
