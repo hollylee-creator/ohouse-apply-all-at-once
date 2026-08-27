@@ -87,9 +87,8 @@ function Index() {
 
   return (
     <div className="min-h-screen w-full bg-background">
+      <LandingStory onCtaClick={scrollToForm} />
       <main className="mx-auto w-full max-w-[430px]">
-        <LandingStory onCtaClick={scrollToForm} />
-
         {/* Form */}
         <form id="lead-form" onSubmit={onSubmit} className="scroll-mt-4 px-5 pt-10">
           <div className="space-y-5">
