@@ -88,31 +88,31 @@ function Index() {
   return (
     <div className="min-h-screen w-full bg-background">
       <LandingStory onCtaClick={scrollToForm} />
-      <main className="mx-auto w-full max-w-[430px]">
+      <main className="w-full">
         {/* Form */}
-        <section className="bg-brand py-10">
+        <section className="bg-gradient-to-b from-background via-brand-soft/80 to-brand-soft/95 py-10">
           <div className="mx-auto w-full max-w-[430px] px-5">
-            <h2 className="text-[22px] font-bold text-brand-foreground">
+            <h2 className="text-[22px] font-bold text-ink">
               지금 무료로 견적 받기
             </h2>
             <form id="lead-form" onSubmit={onSubmit} className="scroll-mt-4 mt-6">
               <div className="space-y-5">
                 <div>
-                  <label htmlFor="name" className="text-[15px] font-bold text-brand-foreground">
-                    성함 <span className="text-brand-foreground/80">*</span>
+                  <label htmlFor="name" className="text-[15px] font-bold text-ink">
+                    성함 <span className="text-brand">*</span>
                   </label>
                   <input
                     id="name"
                     value={name}
                     onChange={(e) => setName(e.target.value.slice(0, 50))}
                     placeholder="이름을 입력해주세요"
-                    className="mt-2 h-14 w-full rounded-xl border-0 bg-white px-4 text-[16px] text-ink outline-none placeholder:text-ink-sub/50 focus:ring-2 focus:ring-white/50"
+                    className="mt-2 h-14 w-full rounded-xl border border-border bg-card px-4 text-[16px] text-ink outline-none placeholder:text-ink-sub/60 focus:border-brand"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="text-[15px] font-bold text-brand-foreground">
-                    연락처 <span className="text-brand-foreground/80">*</span>
+                  <label htmlFor="phone" className="text-[15px] font-bold text-ink">
+                    연락처 <span className="text-brand">*</span>
                   </label>
                   <input
                     id="phone"
@@ -120,20 +120,20 @@ function Index() {
                     value={phone}
                     onChange={(e) => setPhone(formatPhone(e.target.value))}
                     placeholder="010-0000-0000"
-                    className="mt-2 h-14 w-full rounded-xl border-0 bg-white px-4 text-[16px] text-ink outline-none placeholder:text-ink-sub/50 focus:ring-2 focus:ring-white/50"
+                    className="mt-2 h-14 w-full rounded-xl border border-border bg-card px-4 text-[16px] text-ink outline-none placeholder:text-ink-sub/60 focus:border-brand"
                   />
                   {phone.length > 0 && !phoneValid && (
-                    <p className="mt-2 text-[13px] text-white/90">
+                    <p className="mt-2 text-[13px] text-destructive">
                       숫자 11자리의 휴대폰 번호를 입력해주세요
                     </p>
                   )}
                 </div>
 
                 <div>
-                  <p className="text-[15px] font-bold text-brand-foreground">
-                    필요한 서비스 <span className="text-brand-foreground/80">*</span>
+                  <p className="text-[15px] font-bold text-ink">
+                    필요한 서비스 <span className="text-brand">*</span>
                   </p>
-                  <p className="mt-1 text-[13px] text-brand-foreground/90">필요한 서비스를 모두 고르시면 무빙플래너가 한번에 알아봐 드릴게요</p>
+                  <p className="mt-1 text-[13px] text-ink-sub">필요한 서비스를 모두 고르시면 무빙플래너가 한번에 알아봐 드릴게요</p>
                   <div className="mt-3 space-y-2.5">
                     {SERVICES.map((s) => (
                       <ServiceCard
