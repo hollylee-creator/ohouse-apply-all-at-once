@@ -4,6 +4,8 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { ServiceCard } from "@/components/ServiceCard";
 import { KakaoBottomSheet } from "@/components/KakaoBottomSheet";
+import { LandingStory } from "@/components/LandingStory";
+
 import { submitLead } from "@/lib/leads.functions";
 import { cn } from "@/lib/utils";
 
@@ -72,27 +74,16 @@ function Index() {
     }
   };
 
+  const scrollToForm = () =>
+    document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth", block: "start" });
+
   return (
     <main className="mx-auto min-h-screen w-full max-w-[430px] bg-background pb-32">
-      {/* Hero */}
-      <section className="bg-gradient-to-b from-brand-soft to-background px-5 pb-10 pt-12 text-center">
-        <span className="inline-flex items-center rounded-full border border-brand bg-background px-3.5 py-1.5 text-[13px] font-bold text-brand">
-          오늘의집 무빙플래너
-        </span>
-        <h1 className="mt-5 text-[28px] font-extrabold leading-[1.35] text-ink">
-          복잡한 이사 준비,
-          <br />
-          알아서 챙겨드려요
-        </h1>
-        <p className="mt-4 text-[15px] leading-relaxed text-ink-sub">
-          필요한 서비스만 고르면 전담 플래너가
-          <br />
-          상담부터 접수까지 대신 해드려요
-        </p>
-      </section>
+      <LandingStory onCtaClick={scrollToForm} />
 
       {/* Form */}
-      <form onSubmit={onSubmit} className="px-5">
+      <form id="lead-form" onSubmit={onSubmit} className="scroll-mt-4 px-5 pt-10">
+
         <div className="space-y-5">
           <div>
             <label htmlFor="name" className="text-[15px] font-bold text-ink">
