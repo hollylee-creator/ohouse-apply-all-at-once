@@ -299,8 +299,6 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
               </div>
             </div>
 
-            {/* 페이드아웃 오버레이 */}
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-56 bg-gradient-to-b from-transparent via-background/80 to-background" />
           </div>
         </div>
       </section>
