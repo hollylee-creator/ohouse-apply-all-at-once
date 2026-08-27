@@ -40,7 +40,7 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
       {/* 안내 배너 */}
       <div className="px-4 pt-4">
         <div className="mx-auto w-full max-w-[430px]">
-          <div className="flex gap-2 rounded-xl bg-muted px-4 py-3 text-[12px] font-semibold leading-[1.5] text-ink-sub">
+          <div className="mx-auto flex w-[calc(100%-40px)] max-w-[390px] gap-2 rounded-xl bg-muted px-4 py-3 text-[12px] font-semibold leading-[1.5] text-ink-sub">
             <svg
               viewBox="0 0 16 16"
               aria-hidden
@@ -77,7 +77,7 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
           <button
             type="button"
             onClick={onCtaClick}
-            className="mx-auto mt-7 flex h-14 w-[calc(100%-40px)] max-w-[340px] items-center justify-center rounded-[22px] bg-brand px-6 text-[17px] font-bold text-brand-foreground"
+            className="mx-auto mt-7 flex h-14 w-[calc(100%-60px)] max-w-[320px] items-center justify-center rounded-[22px] bg-brand px-6 text-[17px] font-bold text-brand-foreground"
           >
             지금 무료로 견적 받기
             <span className="ml-2">&gt;</span>
