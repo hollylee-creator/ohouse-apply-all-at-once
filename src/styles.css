@@ -158,3 +158,22 @@
     color: var(--color-foreground);
   }
 }
+
+@keyframes cta-blink {
+  0%,
+  45% {
+    background-color: var(--brand);
+    color: var(--brand-foreground);
+    border-color: transparent;
+  }
+  55%,
+  100% {
+    background-color: var(--background);
+    color: var(--brand);
+    border-color: var(--brand);
+  }
+}
+
+.animate-cta-blink {
+  animation: cta-blink 1.6s infinite;
+}
