@@ -173,7 +173,7 @@ function Index() {
                 : "border-muted bg-muted text-ink-sub/60",
             )}
           >
-            {submitting ? "신청 중..." : "지금 무료로 견적 받기 >"}
+            {submitting ? "신청 중..." : "지금 무료로 견적 받기"}
           </button>
         </div>
       </div>
