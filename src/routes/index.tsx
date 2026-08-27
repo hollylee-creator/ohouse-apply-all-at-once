@@ -10,6 +10,7 @@ import { submitLead } from "@/lib/leads.functions";
 import { cn } from "@/lib/utils";
 
 import iconInteriorAsset from "@/assets/icon-interior.png.asset.json";
+import iconPartialAsset from "@/assets/icon-partial.png.asset.json";
 import iconMovingAsset from "@/assets/icon-moving.png.asset.json";
 import iconCleaningAsset from "@/assets/icon-cleaning.png.asset.json";
 import iconWifiAsset from "@/assets/icon-wifi.png.asset.json";
@@ -38,7 +39,7 @@ export const Route = createFileRoute("/")({
 
 const SERVICES = [
   { id: "집 전체 시공", icon: iconInteriorAsset.url, desc: "설계부터 시공까지 믿고 맡길 검증된 업체만" },
-  { id: "부분 시공", icon: "🧻", desc: "주방, 욕실, 도배·장판 등 검증된 업체만" },
+  { id: "부분 시공", icon: iconPartialAsset.url, desc: "주방, 욕실, 도배·장판 등 검증된 업체만" },
   { id: "이사 업체", icon: iconMovingAsset.url, desc: "안심하고 맡길 이사 업체" },
   { id: "입주 청소", icon: iconCleaningAsset.url, desc: "꼼꼼하게 입주 청소를 도와드려요" },
   { id: "인터넷 설치", icon: iconWifiAsset.url, desc: "현금 혜택 가장 많은 곳으로 연결" },
