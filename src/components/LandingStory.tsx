@@ -262,12 +262,12 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
                       집 전체 시공 견적 신청하기
                     </span>
                     <span className="rounded-full bg-brand-soft px-2 py-0.5 text-[10px] font-bold text-brand">
-                      매칭대기
+                      신청완료
                     </span>
                   </div>
                   <div className="mt-1.5 flex gap-1">
                     <span className="h-1.5 flex-1 rounded-full bg-brand" />
-                    <span className="h-1.5 flex-1 rounded-full bg-muted" />
+                    <span className="h-1.5 flex-1 rounded-full bg-brand" />
                     <span className="h-1.5 flex-1 rounded-full bg-muted" />
                   </div>
                 </li>
