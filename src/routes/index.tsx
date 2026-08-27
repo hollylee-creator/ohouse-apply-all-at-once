@@ -163,9 +163,16 @@ function Index() {
       <div className="fixed inset-x-0 bottom-0 z-40 w-full border-t border-border bg-background">
         <div className="mx-auto w-full max-w-[430px] px-2.5 pb-[calc(env(safe-area-inset-bottom)+16px)] pt-3">
           <button
-            type="submit"
-            form="lead-form"
-            disabled={!canSubmit || submitting}
+            type="button"
+            onClick={() => {
+              if (canSubmit && !submitting) {
+                document.getElementById("lead-form")?.dispatchEvent(
+                  new Event("submit", { bubbles: true, cancelable: true })
+                );
+              } else {
+                document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth", block: "start" });
+              }
+            }}
             className={cn(
               "h-14 w-full rounded-[22px] border-2 text-[16px] font-bold",
               canSubmit && !submitting
