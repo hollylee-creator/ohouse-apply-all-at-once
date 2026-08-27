@@ -1,28 +1,19 @@
 import { Info, Search, Calendar, MessageSquare, ChevronRight } from "lucide-react";
 import kakaoChatAsset from "@/assets/kakao-chat.png.asset.json";
+import movingCharacterAsset from "@/assets/moving-character.png.asset.json";
+import iconInteriorAsset from "@/assets/icon-interior.png.asset.json";
+import iconMovingAsset from "@/assets/icon-moving.png.asset.json";
+import iconCleaningAsset from "@/assets/icon-cleaning.png.asset.json";
+import iconWifiAsset from "@/assets/icon-wifi.png.asset.json";
+import iconWaterAsset from "@/assets/icon-water.png.asset.json";
 
-
-/** 에셋이 준비되면 src 경로만 교체하면 되는 슬롯 */
-function AssetSlot({
-  label,
-  className,
-}: {
-  label: string;
-  className?: string;
-}) {
-  return (
-    <div
-      className={
-        "flex items-center justify-center rounded-xl border border-dashed border-brand/40 bg-brand-softer text-[11px] leading-tight text-brand/70 " +
-        (className ?? "")
-      }
-    >
-      {label}
-    </div>
-  );
-}
-
-const ICONS = ["인테리어\n시공", "이사\n업체", "입주\n청소", "인터넷\n설치", "가전\n렌탈"];
+const ICONS = [
+  { label: "인테리어\n시공", src: iconInteriorAsset.url, alt: "인테리어 시공 아이콘" },
+  { label: "이사\n업체", src: iconMovingAsset.url, alt: "이사 업체 아이콘" },
+  { label: "입주\n청소", src: iconCleaningAsset.url, alt: "입주 청소 아이콘" },
+  { label: "인터넷\n설치", src: iconWifiAsset.url, alt: "인터넷 설치 아이콘" },
+  { label: "가전\n렌탈", src: iconWaterAsset.url, alt: "가전 렌탈 아이콘" },
+];
 
 const BENEFITS = [
   {
@@ -77,9 +68,11 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
           <ChevronRight className="size-4" />
         </button>
 
-        <AssetSlot
-          label={"무빙플래너 캐릭터 일러스트\n(에셋 필요)"}
-          className="mx-auto mt-8 h-[180px] w-[180px] whitespace-pre-line rounded-full text-center"
+        <img
+          src={movingCharacterAsset.url}
+          alt="오늘의집 무빙플래너 캐릭터"
+          loading="lazy"
+          className="mx-auto mt-8 h-[180px] w-[180px] object-contain"
         />
 
         <p className="mt-7 text-[16px] font-bold text-ink">
@@ -94,11 +87,16 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
         {/* 서비스 아이콘 5종 */}
         <div className="mt-8 rounded-2xl border border-brand/50 bg-background px-3 py-5">
           <ul className="grid grid-cols-5 gap-1">
-            {ICONS.map((label) => (
-              <li key={label} className="flex flex-col items-center gap-2">
-                <AssetSlot label="icon" className="size-9 rounded-lg text-[9px]" />
+            {ICONS.map((item) => (
+              <li key={item.label} className="flex flex-col items-center gap-2">
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  loading="lazy"
+                  className="size-9 object-contain"
+                />
                 <span className="whitespace-pre-line text-[11px] font-medium leading-[1.3] text-ink">
-                  {label}
+                  {item.label}
                 </span>
               </li>
             ))}
@@ -139,7 +137,6 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
           loading="lazy"
           className="mt-6 w-full rounded-2xl"
         />
-
       </section>
 
       {/* 일정표 섹션 */}
