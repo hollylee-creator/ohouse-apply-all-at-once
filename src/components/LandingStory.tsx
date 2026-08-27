@@ -162,7 +162,7 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
           </p>
 
           {/* 일정표 목업 — 상단만 보이고 아래로 페이드아웃 */}
-          <div className="relative mt-6 overflow-hidden rounded-2xl border border-border bg-background shadow-sm">
+          <div className="relative mt-6 max-h-[460px] overflow-hidden rounded-2xl border border-border bg-background shadow-sm">
             <div className="px-4 pb-10 pt-4">
               {/* 상단 헤더 */}
               <div className="flex items-center justify-between">
@@ -299,6 +299,8 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
               </div>
             </div>
 
+            {/* 하단 페이드아웃 — 배경과 자연스럽게 섞임 */}
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent via-background/80 to-background" />
           </div>
         </div>
       </section>
