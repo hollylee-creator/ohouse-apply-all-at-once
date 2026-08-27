@@ -299,6 +299,8 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
               </div>
             </div>
 
+            {/* 하단 페이드아웃 — 배경과 자연스럽게 섞임 */}
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent via-background/80 to-background" />
           </div>
         </div>
       </section>
