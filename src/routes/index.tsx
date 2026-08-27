@@ -161,19 +161,19 @@ function Index() {
 
       {/* Fixed CTA */}
       <div className="fixed inset-x-0 bottom-0 z-40 w-full border-t border-border bg-background">
-        <div className="mx-auto w-full max-w-[430px] px-5 pb-[calc(env(safe-area-inset-bottom)+16px)] pt-3">
+        <div className="mx-auto w-full max-w-[430px] px-2.5 pb-[calc(env(safe-area-inset-bottom)+16px)] pt-3">
           <button
             type="submit"
             form="lead-form"
             disabled={!canSubmit || submitting}
             className={cn(
-              "h-14 w-full rounded-xl text-[16px] font-bold transition-colors",
+              "h-14 w-full rounded-[22px] border-2 text-[16px] font-bold transition-colors",
               canSubmit && !submitting
-                ? "bg-brand text-brand-foreground"
-                : "bg-muted text-ink-sub/60",
+                ? "animate-cta-blink border-brand"
+                : "animate-none border-muted bg-muted text-ink-sub/60",
             )}
           >
-            {submitting ? "신청 중..." : "무료로 견적 받기"}
+            {submitting ? "신청 중..." : "지금 무료로 견적 받기 >"}
           </button>
         </div>
       </div>
