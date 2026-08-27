@@ -1,6 +1,7 @@
 import { Info, Search, Calendar, MessageSquare, ChevronRight, Gift } from "lucide-react";
 import kakaoChatAsset from "@/assets/kakao-chat.png.asset.json";
 import movingCharacterAsset from "@/assets/moving-character.png.asset.json";
+import movingPlannerBadgeAsset from "@/assets/moving-planner-badge.svg.asset.json";
 import iconInteriorAsset from "@/assets/icon-interior.png.asset.json";
 import iconMovingAsset from "@/assets/icon-moving.png.asset.json";
 import iconCleaningAsset from "@/assets/icon-cleaning.png.asset.json";
