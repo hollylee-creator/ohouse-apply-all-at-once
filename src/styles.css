@@ -174,7 +174,3 @@
     border-color: var(--brand);
   }
 }
-
-.animate-cta-blink {
-  animation: cta-blink 1s infinite;
-}
