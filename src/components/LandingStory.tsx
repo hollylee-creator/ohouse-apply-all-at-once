@@ -53,7 +53,7 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
             <p>
               이사 예정 고객님께만 드리는 안내예요.
               <br />
-              나가시면 다시 볼 수 없어요. 잊지 않도록 스크랩해 두세요.
+              나가시면 다시 볼 수 없어요. 잊지 않도록 북마크해 두세요.
             </p>
           </div>
         </div>
