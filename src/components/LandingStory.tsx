@@ -1,4 +1,4 @@
-import { Info, Search, Calendar, MessageSquare, ChevronRight, Gift } from "lucide-react";
+import { Search, Calendar, MessageSquare, ChevronRight, Gift } from "lucide-react";
 import kakaoChatAsset from "@/assets/kakao-chat.png.asset.json";
 import movingCharacterAsset from "@/assets/moving-character.png.asset.json";
 import movingPlannerBadgeAsset from "@/assets/moving-planner-badge.svg.asset.json";
@@ -40,8 +40,16 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
       {/* 안내 배너 */}
       <div className="px-4 pt-4">
         <div className="mx-auto w-full max-w-[430px]">
-          <div className="flex gap-2 rounded-xl bg-muted px-4 py-3 text-[12px] font-medium leading-[1.5] text-ink-sub">
-            <Info className="mt-0.5 size-4 shrink-0 text-ink-sub" />
+          <div className="flex gap-2 rounded-xl bg-muted px-4 py-3 text-[12px] font-semibold leading-[1.5] text-ink-sub">
+            <svg
+              viewBox="0 0 16 16"
+              aria-hidden
+              className="mt-0.5 size-4 shrink-0 text-ink-sub"
+            >
+              <circle cx="8" cy="8" r="8" fill="currentColor" />
+              <circle cx="8" cy="5" r="1.25" fill="white" />
+              <rect x="6.75" y="7" width="2.5" height="5" rx="1" fill="white" />
+            </svg>
             <p>
               이사 예정 고객님께만 드리는 안내예요.
               <br />
