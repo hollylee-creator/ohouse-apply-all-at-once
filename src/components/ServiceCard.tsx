@@ -2,14 +2,14 @@ import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type Props = {
-  emoji: string;
+  icon: string;
   title: string;
   desc: string;
   checked: boolean;
   onToggle: () => void;
 };
 
-export function ServiceCard({ emoji, title, desc, checked, onToggle }: Props) {
+export function ServiceCard({ icon, title, desc, checked, onToggle }: Props) {
   return (
     <button
       type="button"
@@ -23,9 +23,19 @@ export function ServiceCard({ emoji, title, desc, checked, onToggle }: Props) {
           : "border-border",
       )}
     >
-      <span className="text-2xl leading-none" aria-hidden>
-        {emoji}
-      </span>
+      {icon.startsWith("http") || icon.startsWith("/") ? (
+        <img
+          src={icon}
+          alt=""
+          aria-hidden
+          loading="lazy"
+          className="size-9 shrink-0 object-contain"
+        />
+      ) : (
+        <span className="flex size-9 shrink-0 items-center justify-center text-2xl leading-none" aria-hidden>
+          {icon}
+        </span>
+      )}
       <span className="min-w-0 flex-1">
         <span className="block text-[17px] font-bold text-ink">{title}</span>
         <span className="mt-0.5 block text-[13px] text-ink-sub">{desc}</span>
