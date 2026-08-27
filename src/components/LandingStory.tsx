@@ -83,7 +83,9 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
           결혼엔 웨딩플래너, 이사엔 무빙플래너
         </p>
         <p className="mt-4 text-[14px] leading-[1.6] text-ink-sub">
-          필요한 서비스만 고르면 전담 플래너가 상담부터 접수까지 대신 해드려요
+          필요한 서비스만 고르면
+          <br />
+          전담 플래너가 상담부터 접수까지 대신 해드려요
         </p>
 
         {/* 서비스 아이콘 5종 */}
