@@ -57,7 +57,7 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
           loading="lazy"
           className="mx-auto h-[26px] w-auto"
         />
-        <h1 className="mt-5 text-[28px] font-extrabold leading-[1.32] tracking-tight text-ink">
+        <h1 className="mt-5 text-[28px] font-bold leading-[1.32] tracking-tight text-ink">
           복잡한 이사 준비,
           <br />
           알아서 챙겨드려요
