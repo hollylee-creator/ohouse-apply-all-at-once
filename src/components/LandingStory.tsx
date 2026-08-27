@@ -150,7 +150,7 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
       </section>
 
       {/* 일정표 섹션 */}
-      <section className="bg-brand-softer py-12">
+      <section className="py-12">
         <div className="mx-auto w-full max-w-[430px] px-5">
           <h2 className="text-[22px] font-bold leading-[1.35] text-ink">
             맞춤 일정표로, 놓치는 일 없이!
