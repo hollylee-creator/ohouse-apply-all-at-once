@@ -169,8 +169,8 @@ function Index() {
             className={cn(
               "h-14 w-full rounded-[22px] border-2 text-[16px] font-bold",
               canSubmit && !submitting
-                ? "animate-cta-blink border-brand"
-                : "animate-none border-muted bg-muted text-ink-sub/60",
+                ? "bg-brand border-transparent text-brand-foreground"
+                : "border-muted bg-muted text-ink-sub/60",
             )}
           >
             {submitting ? "신청 중..." : "지금 무료로 견적 받기 >"}
