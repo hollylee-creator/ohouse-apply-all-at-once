@@ -39,13 +39,15 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
     <div>
       {/* 안내 배너 */}
       <div className="px-4 pt-4">
-        <div className="flex gap-2 rounded-xl bg-muted px-4 py-3 text-[12px] leading-[1.5] text-ink-sub">
-          <Info className="mt-0.5 size-4 shrink-0 text-ink-sub" />
-          <p>
-            이사 예정 고객님께만 드리는 안내예요.
-            <br />
-            나가시면 다시 볼 수 없어요. 잊지 않도록 스크랩해 두세요.
-          </p>
+        <div className="mx-auto w-full max-w-[430px]">
+          <div className="flex gap-2 rounded-xl bg-muted px-4 py-3 text-[12px] leading-[1.5] text-ink-sub">
+            <Info className="mt-0.5 size-4 shrink-0 text-ink-sub" />
+            <p>
+              이사 예정 고객님께만 드리는 안내예요.
+              <br />
+              나가시면 다시 볼 수 없어요. 잊지 않도록 스크랩해 두세요.
+            </p>
+          </div>
         </div>
       </div>
 
