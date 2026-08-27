@@ -211,7 +211,33 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
                 <li>
                   <div className="flex items-center justify-between">
                     <span className="flex items-center gap-2 text-[13px] text-ink">
-                      <span className="size-4 rounded border border-border" />
+                      <img
+                        src={iconMovingAsset.url}
+                        alt="이사 업체"
+                        loading="lazy"
+                        className="size-4 object-contain"
+                      />
+                      이사 업체 견적 신청하기
+                    </span>
+                    <span className="rounded-full bg-orange-100 px-2 py-0.5 text-[10px] font-bold text-orange-600">
+                      매칭중
+                    </span>
+                  </div>
+                  <div className="mt-1.5 flex gap-1">
+                    <span className="h-1.5 flex-1 rounded-full bg-orange-500" />
+                    <span className="h-1.5 flex-1 rounded-full bg-orange-500" />
+                    <span className="h-1.5 flex-1 rounded-full bg-muted" />
+                  </div>
+                </li>
+                <li>
+                  <div className="flex items-center justify-between">
+                    <span className="flex items-center gap-2 text-[13px] text-ink">
+                      <img
+                        src={iconCleaningAsset.url}
+                        alt="입주 청소"
+                        loading="lazy"
+                        className="size-4 object-contain"
+                      />
                       청소 견적 신청하기
                     </span>
                     <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-bold text-emerald-600">
@@ -227,8 +253,13 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
                 <li>
                   <div className="flex items-center justify-between">
                     <span className="flex items-center gap-2 text-[13px] text-ink">
-                      <span className="size-4 rounded border border-border" />
-                      종합시공 견적 신청하기
+                      <img
+                        src={iconInteriorAsset.url}
+                        alt="집 전체 시공"
+                        loading="lazy"
+                        className="size-4 object-contain"
+                      />
+                      집 전체 시공 견적 신청하기
                     </span>
                     <span className="rounded-full bg-brand-soft px-2 py-0.5 text-[10px] font-bold text-brand">
                       매칭대기
@@ -236,22 +267,6 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
                   </div>
                   <div className="mt-1.5 flex gap-1">
                     <span className="h-1.5 flex-1 rounded-full bg-brand" />
-                    <span className="h-1.5 flex-1 rounded-full bg-muted" />
-                    <span className="h-1.5 flex-1 rounded-full bg-muted" />
-                  </div>
-                </li>
-                <li>
-                  <div className="flex items-center justify-between">
-                    <span className="flex items-center gap-2 text-[13px] text-ink">
-                      <span className="text-brand">✳</span>
-                      오늘의집 시공 견적 신청하기
-                    </span>
-                    <span className="rounded-full bg-muted px-2 py-0.5 text-[10px] font-bold text-ink-sub">
-                      신청 전
-                    </span>
-                  </div>
-                  <div className="mt-1.5 flex gap-1">
-                    <span className="h-1.5 flex-1 rounded-full bg-muted" />
                     <span className="h-1.5 flex-1 rounded-full bg-muted" />
                     <span className="h-1.5 flex-1 rounded-full bg-muted" />
                   </div>
