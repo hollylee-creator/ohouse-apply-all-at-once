@@ -52,78 +52,80 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
       </div>
 
       {/* 히어로 */}
-      <section className="bg-gradient-to-b from-background via-brand-softer to-brand-soft/60 px-5 pb-10 pt-10 text-center">
-        <img
-          src={movingPlannerBadgeAsset.url}
-          alt="오늘의집 무빙플래너"
-          loading="lazy"
-          className="mx-auto h-[26px] w-auto"
-        />
-        <h1 className="mt-5 text-[28px] font-bold leading-[1.32] tracking-tight text-ink">
-          복잡한 이사 준비,
-          <br />
-          알아서 챙겨드려요
-        </h1>
+      <section className="bg-gradient-to-b from-background via-brand-softer to-brand-soft/60 pb-10 pt-10 text-center">
+        <div className="mx-auto w-full max-w-[430px] px-5">
+          <img
+            src={movingPlannerBadgeAsset.url}
+            alt="오늘의집 무빙플래너"
+            loading="lazy"
+            className="mx-auto h-[26px] w-auto"
+          />
+          <h1 className="mt-5 text-[28px] font-bold leading-[1.32] tracking-tight text-ink">
+            복잡한 이사 준비,
+            <br />
+            알아서 챙겨드려요
+          </h1>
 
-        <button
-          type="button"
-          onClick={onCtaClick}
-          className="animate-cta-blink mx-auto mt-7 inline-flex h-14 w-[calc(100%-80px)] max-w-[310px] items-center justify-center gap-1 rounded-full border-2 border-transparent text-[17px] font-bold"
-        >
-          지금 무료로 견적 받기
-          <ChevronRight className="size-4" />
-        </button>
+          <button
+            type="button"
+            onClick={onCtaClick}
+            className="animate-cta-blink mx-auto mt-7 inline-flex h-14 w-[calc(100%-80px)] max-w-[310px] items-center justify-center gap-1 rounded-full border-2 border-transparent text-[17px] font-bold"
+          >
+            지금 무료로 견적 받기
+            <ChevronRight className="size-4" />
+          </button>
 
-        <img
-          src={movingCharacterAsset.url}
-          alt="오늘의집 무빙플래너 캐릭터"
-          loading="lazy"
-          className="mx-auto mt-8 h-[180px] w-[180px] object-contain"
-        />
+          <img
+            src={movingCharacterAsset.url}
+            alt="오늘의집 무빙플래너 캐릭터"
+            loading="lazy"
+            className="mx-auto mt-8 h-[180px] w-[180px] object-contain"
+          />
 
-        <p className="mt-7 text-[16px] font-bold text-ink">
-          결혼엔 웨딩플래너, 이사엔 무빙플래너
-        </p>
-        <p className="mt-4 text-[14px] leading-[1.6] text-ink-sub">
-          필요한 서비스만 고르면
-          <br />
-          전담 플래너가 상담부터 접수까지 대신 해드려요
-        </p>
+          <p className="mt-7 text-[16px] font-bold text-ink">
+            결혼엔 웨딩플래너, 이사엔 무빙플래너
+          </p>
+          <p className="mt-4 text-[14px] leading-[1.6] text-ink-sub">
+            필요한 서비스만 고르면
+            <br />
+            전담 플래너가 상담부터 접수까지 대신 해드려요
+          </p>
 
-        {/* 서비스 아이콘 5종 */}
-        <div className="mt-8 rounded-2xl border border-brand/50 bg-background px-3 py-5">
-          <ul className="grid grid-cols-5 gap-1">
-            {ICONS.map((item) => (
-              <li key={item.label} className="flex flex-col items-center gap-2">
-                <img
-                  src={item.src}
-                  alt={item.alt}
-                  loading="lazy"
-                  className="size-9 object-contain"
-                />
-                <span className="whitespace-pre-line text-[11px] font-medium leading-[1.3] text-ink">
-                  {item.label}
-                </span>
+          {/* 서비스 아이콘 5종 */}
+          <div className="mt-8 rounded-2xl border border-brand/50 bg-background px-3 py-5">
+            <ul className="grid grid-cols-5 gap-1">
+              {ICONS.map((item) => (
+                <li key={item.label} className="flex flex-col items-center gap-2">
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    loading="lazy"
+                    className="size-9 object-contain"
+                  />
+                  <span className="whitespace-pre-line text-[11px] font-medium leading-[1.3] text-ink">
+                    {item.label}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* 혜택 3종 */}
+          <ul className="mt-3 space-y-2.5">
+            {BENEFITS.map(({ Icon, title, desc }) => (
+              <li
+                key={title}
+                className="flex gap-3 rounded-2xl bg-background px-4 py-4 text-left"
+              >
+                <Icon className="mt-1 size-5 shrink-0 text-brand" />
+                <div>
+                  <p className="text-[15px] font-bold text-ink">{title}</p>
+                  <p className="mt-1 text-[13px] leading-[1.5] text-ink-sub">{desc}</p>
+                </div>
               </li>
             ))}
           </ul>
         </div>
-
-        {/* 혜택 3종 */}
-        <ul className="mt-3 space-y-2.5">
-          {BENEFITS.map(({ Icon, title, desc }) => (
-            <li
-              key={title}
-              className="flex gap-3 rounded-2xl bg-background px-4 py-4 text-left"
-            >
-              <Icon className="mt-1 size-5 shrink-0 text-brand" />
-              <div>
-                <p className="text-[15px] font-bold text-ink">{title}</p>
-                <p className="mt-1 text-[13px] leading-[1.5] text-ink-sub">{desc}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
       </section>
 
       {/* 채팅 섹션 */}
