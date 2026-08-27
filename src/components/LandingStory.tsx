@@ -129,22 +129,24 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
       </section>
 
       {/* 채팅 섹션 */}
-      <section className="px-5 py-12">
-        <h2 className="text-[22px] font-bold leading-[1.35] text-ink">
-          무빙플래너가 전부 대신 해드려요
-        </h2>
-        <p className="mt-3 text-[14px] leading-[1.6] text-ink-sub">
-          막막한 이사준비, 이제 혼자 검색하지 않아도 돼요.
-          <br />
-          이제 무빙플래너에게 그냥 맡기세요.
-        </p>
+      <section className="py-12">
+        <div className="mx-auto w-full max-w-[430px] px-5">
+          <h2 className="text-[22px] font-bold leading-[1.35] text-ink">
+            무빙플래너가 전부 대신 해드려요
+          </h2>
+          <p className="mt-3 text-[14px] leading-[1.6] text-ink-sub">
+            막막한 이사준비, 이제 혼자 검색하지 않아도 돼요.
+            <br />
+            이제 무빙플래너에게 그냥 맡기세요.
+          </p>
 
-        <img
-          src={kakaoChatAsset.url}
-          alt="무빙플래너 채널 카카오톡 상담 예시"
-          loading="lazy"
-          className="mt-6 w-full rounded-2xl"
-        />
+          <img
+            src={kakaoChatAsset.url}
+            alt="무빙플래너 채널 카카오톡 상담 예시"
+            loading="lazy"
+            className="mt-6 w-full rounded-2xl"
+          />
+        </div>
       </section>
 
       {/* 일정표 섹션 */}
