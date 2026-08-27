@@ -165,12 +165,11 @@ function Index() {
           <button
             type="button"
             onClick={() => {
+              const form = document.getElementById("lead-form") as HTMLFormElement | null;
               if (canSubmit && !submitting) {
-                document.getElementById("lead-form")?.dispatchEvent(
-                  new Event("submit", { bubbles: true, cancelable: true })
-                );
+                form?.requestSubmit();
               } else {
-                document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth", block: "start" });
+                form?.scrollIntoView({ behavior: "smooth", block: "start" });
               }
             }}
             className={cn(
