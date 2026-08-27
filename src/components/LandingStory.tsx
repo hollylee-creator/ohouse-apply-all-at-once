@@ -166,7 +166,7 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
                 className="h-[26px] w-auto"
               />
               <span className="inline-flex items-center rounded-full bg-brand-soft px-2.5 py-1 text-[11px] font-bold text-brand">
-                상담전
+                플래닝중
               </span>
             </div>
 
