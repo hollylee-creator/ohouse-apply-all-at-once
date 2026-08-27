@@ -128,7 +128,7 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
                 <Icon className="mt-1 size-5 shrink-0 text-brand" />
                 <div>
                   <p className="text-[15px] font-bold text-ink">{title}</p>
-                  <p className="mt-1 text-[13px] leading-[1.5] text-ink-sub">{desc}</p>
+                  <p className="mt-1 whitespace-pre-line text-[13px] leading-[1.5] text-ink-sub">{desc}</p>
                 </div>
               </li>
             ))}
