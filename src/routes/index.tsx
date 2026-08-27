@@ -86,69 +86,79 @@ function Index() {
     document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth", block: "start" });
 
   return (
-    <main className="mx-auto min-h-screen w-full max-w-[430px] bg-background pb-32">
-      <LandingStory onCtaClick={scrollToForm} />
+    <div className="min-h-screen w-full bg-background">
+      <main className="mx-auto w-full max-w-[430px]">
+        <LandingStory onCtaClick={scrollToForm} />
 
-      {/* Form */}
-      <form id="lead-form" onSubmit={onSubmit} className="scroll-mt-4 px-5 pt-10">
+        {/* Form */}
+        <form id="lead-form" onSubmit={onSubmit} className="scroll-mt-4 px-5 pt-10">
+          <div className="space-y-5">
+            <div>
+              <label htmlFor="name" className="text-[15px] font-bold text-ink">
+                성함 <span className="text-brand">*</span>
+              </label>
+              <input
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value.slice(0, 50))}
+                placeholder="이름을 입력해주세요"
+                className="mt-2 h-14 w-full rounded-xl border border-border bg-card px-4 text-[16px] text-ink outline-none placeholder:text-ink-sub/60 focus:border-brand"
+              />
+            </div>
 
-        <div className="space-y-5">
-          <div>
-            <label htmlFor="name" className="text-[15px] font-bold text-ink">
-              성함 <span className="text-brand">*</span>
-            </label>
-            <input
-              id="name"
-              value={name}
-              onChange={(e) => setName(e.target.value.slice(0, 50))}
-              placeholder="이름을 입력해주세요"
-              className="mt-2 h-14 w-full rounded-xl border border-border bg-card px-4 text-[16px] text-ink outline-none placeholder:text-ink-sub/60 focus:border-brand"
-            />
-          </div>
+            <div>
+              <label htmlFor="phone" className="text-[15px] font-bold text-ink">
+                연락처 <span className="text-brand">*</span>
+              </label>
+              <input
+                id="phone"
+                inputMode="numeric"
+                value={phone}
+                onChange={(e) => setPhone(formatPhone(e.target.value))}
+                placeholder="010-0000-0000"
+                className="mt-2 h-14 w-full rounded-xl border border-border bg-card px-4 text-[16px] text-ink outline-none placeholder:text-ink-sub/60 focus:border-brand"
+              />
+              {phone.length > 0 && !phoneValid && (
+                <p className="mt-2 text-[13px] text-destructive">
+                  숫자 11자리의 휴대폰 번호를 입력해주세요
+                </p>
+              )}
+            </div>
 
-          <div>
-            <label htmlFor="phone" className="text-[15px] font-bold text-ink">
-              연락처 <span className="text-brand">*</span>
-            </label>
-            <input
-              id="phone"
-              inputMode="numeric"
-              value={phone}
-              onChange={(e) => setPhone(formatPhone(e.target.value))}
-              placeholder="010-0000-0000"
-              className="mt-2 h-14 w-full rounded-xl border border-border bg-card px-4 text-[16px] text-ink outline-none placeholder:text-ink-sub/60 focus:border-brand"
-            />
-            {phone.length > 0 && !phoneValid && (
-              <p className="mt-2 text-[13px] text-destructive">
-                숫자 11자리의 휴대폰 번호를 입력해주세요
+            <div>
+              <p className="text-[15px] font-bold text-ink">
+                필요한 서비스 <span className="text-brand">*</span>
               </p>
-            )}
-          </div>
-
-          <div>
-            <p className="text-[15px] font-bold text-ink">
-              필요한 서비스 <span className="text-brand">*</span>
-            </p>
-            <p className="mt-1 text-[13px] text-ink-sub">필요한 서비스를 모두 고르시면 무빙플래너가 한번에 알아봐 드릴게요</p>
-            <div className="mt-3 space-y-2.5">
-              {SERVICES.map((s) => (
-                <ServiceCard
-                  key={s.id}
-                  icon={s.icon}
-                  title={s.id}
-                  desc={s.desc}
-                  checked={selected.includes(s.id)}
-                  onToggle={() => toggle(s.id)}
-                />
-              ))}
+              <p className="mt-1 text-[13px] text-ink-sub">필요한 서비스를 모두 고르시면 무빙플래너가 한번에 알아봐 드릴게요</p>
+              <div className="mt-3 space-y-2.5">
+                {SERVICES.map((s) => (
+                  <ServiceCard
+                    key={s.id}
+                    icon={s.icon}
+                    title={s.id}
+                    desc={s.desc}
+                    checked={selected.includes(s.id)}
+                    onToggle={() => toggle(s.id)}
+                  />
+                ))}
+              </div>
             </div>
           </div>
-        </div>
+        </form>
 
-        {/* Fixed CTA */}
-        <div className="fixed inset-x-0 bottom-0 z-40 mx-auto w-full max-w-[430px] border-t border-border bg-background px-5 pb-[calc(env(safe-area-inset-bottom)+16px)] pt-3">
+        <KakaoBottomSheet
+          open={sheetOpen}
+          name={name.trim()}
+          onClose={() => setSheetOpen(false)}
+        />
+      </main>
+
+      {/* Fixed CTA */}
+      <div className="fixed inset-x-0 bottom-0 z-40 w-full border-t border-border bg-background">
+        <div className="mx-auto w-full max-w-[430px] px-5 pb-[calc(env(safe-area-inset-bottom)+16px)] pt-3">
           <button
             type="submit"
+            form="lead-form"
             disabled={!canSubmit || submitting}
             className={cn(
               "h-14 w-full rounded-xl text-[16px] font-bold transition-colors",
@@ -160,13 +170,7 @@ function Index() {
             {submitting ? "신청 중..." : "무료로 견적 받기"}
           </button>
         </div>
-      </form>
-
-      <KakaoBottomSheet
-        open={sheetOpen}
-        name={name.trim()}
-        onClose={() => setSheetOpen(false)}
-      />
-    </main>
+      </div>
+    </div>
   );
 }
