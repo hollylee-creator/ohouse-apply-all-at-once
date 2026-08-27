@@ -1,6 +1,7 @@
 import { Info, Search, Calendar, MessageSquare, ChevronRight, Gift } from "lucide-react";
 import kakaoChatAsset from "@/assets/kakao-chat.png.asset.json";
 import movingCharacterAsset from "@/assets/moving-character.png.asset.json";
+import movingPlannerBadgeAsset from "@/assets/moving-planner-badge.svg.asset.json";
 import iconInteriorAsset from "@/assets/icon-interior.png.asset.json";
 import iconMovingAsset from "@/assets/icon-moving.png.asset.json";
 import iconCleaningAsset from "@/assets/icon-cleaning.png.asset.json";
@@ -50,9 +51,12 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
 
       {/* 히어로 */}
       <section className="bg-gradient-to-b from-background via-brand-softer to-brand-soft/60 px-5 pb-10 pt-10 text-center">
-        <span className="inline-flex items-center rounded-full border border-brand bg-background px-3.5 py-1.5 text-[13px] font-bold text-brand">
-          오늘의집 무빙플래너
-        </span>
+        <img
+          src={movingPlannerBadgeAsset.url}
+          alt="오늘의집 무빙플래너"
+          loading="lazy"
+          className="mx-auto h-[26px] w-auto"
+        />
         <h1 className="mt-5 text-[28px] font-extrabold leading-[1.32] tracking-tight text-ink">
           복잡한 이사 준비,
           <br />
@@ -155,12 +159,12 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
           <div className="px-4 pb-10 pt-4">
             {/* 상단 헤더 */}
             <div className="flex items-center justify-between">
-              <span className="inline-flex items-center gap-1 rounded-full border border-brand px-2.5 py-1 text-[11px] font-bold text-brand">
-                <span className="flex size-3.5 items-center justify-center rounded-sm bg-brand text-[8px] font-extrabold text-brand-foreground">
-                  ㅇ
-                </span>
-                오늘의집 무빙플래너
-              </span>
+              <img
+                src={movingPlannerBadgeAsset.url}
+                alt="오늘의집 무빙플래너"
+                loading="lazy"
+                className="h-[26px] w-auto"
+              />
               <span className="inline-flex items-center rounded-full bg-brand-soft px-2.5 py-1 text-[11px] font-bold text-brand">
                 상담전
               </span>
