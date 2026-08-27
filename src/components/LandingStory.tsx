@@ -40,7 +40,7 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
       {/* 안내 배너 */}
       <div className="px-4 pt-4">
         <div className="mx-auto w-full max-w-[430px]">
-          <div className="flex gap-2 rounded-xl bg-muted px-4 py-3 text-[12px] font-semibold leading-[1.5] text-ink-sub">
+          <div className="mx-auto flex w-[calc(100%-40px)] max-w-[390px] gap-2 rounded-xl bg-muted px-4 py-3 text-[12px] font-semibold leading-[1.5] text-ink-sub">
             <svg
               viewBox="0 0 16 16"
               aria-hidden
