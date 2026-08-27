@@ -133,7 +133,7 @@ function Index() {
               {SERVICES.map((s) => (
                 <ServiceCard
                   key={s.id}
-                  emoji={s.emoji}
+                  icon={s.icon}
                   title={s.id}
                   desc={s.desc}
                   checked={selected.includes(s.id)}
