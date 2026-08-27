@@ -167,7 +167,7 @@ function Index() {
             form="lead-form"
             disabled={!canSubmit || submitting}
             className={cn(
-              "h-14 w-full rounded-[22px] border-2 text-[16px] font-bold transition-colors",
+              "h-14 w-full rounded-[22px] border-2 text-[16px] font-bold",
               canSubmit && !submitting
                 ? "animate-cta-blink border-brand"
                 : "animate-none border-muted bg-muted text-ink-sub/60",
