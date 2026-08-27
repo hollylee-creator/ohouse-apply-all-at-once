@@ -4,6 +4,8 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { ServiceCard } from "@/components/ServiceCard";
 import { KakaoBottomSheet } from "@/components/KakaoBottomSheet";
+import { LandingStory } from "@/components/LandingStory";
+
 import { submitLead } from "@/lib/leads.functions";
 import { cn } from "@/lib/utils";
 
