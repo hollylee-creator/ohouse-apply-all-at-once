@@ -1,34 +1,38 @@
-import { Search, Calendar, MessageSquare, ChevronRight, Gift } from "lucide-react";
-import kakaoChatAsset from "@/assets/kakao-chat.png.asset.json";
-import movingCharacterAsset from "@/assets/moving-character.png.asset.json";
-import movingPlannerBadgeAsset from "@/assets/moving-planner-badge.svg.asset.json";
-import iconInteriorAsset from "@/assets/icon-interior.png.asset.json";
-import iconMovingAsset from "@/assets/icon-moving.png.asset.json";
-import iconCleaningAsset from "@/assets/icon-cleaning.png.asset.json";
-import iconWifiAsset from "@/assets/icon-wifi.png.asset.json";
-import iconWaterAsset from "@/assets/icon-water.png.asset.json";
+import kakaoChat from "@/assets/kakao-chat.png";
+import movingCharacter from "@/assets/moving-character.png";
+import scheduleMockup from "@/assets/schedule-mockup.png";
+import iconShippingBox from "@/assets/icon-shipping-box.svg";
+import iconInfoCircle from "@/assets/icon-info-circle.svg";
+import iconMagnifyingGlass from "@/assets/icon-magnifying-glass.svg";
+import iconCalendarIcon from "@/assets/icon-calendar.svg";
+import iconBubbleChat from "@/assets/icon-bubble-chat.svg";
+import iconInterior from "@/assets/icon-interior.png";
+import iconMoving from "@/assets/icon-moving.png";
+import iconCleaning from "@/assets/icon-cleaning.png";
+import iconWifi from "@/assets/icon-wifi.png";
+import iconWater from "@/assets/icon-water.png";
 
 const ICONS = [
-  { label: "인테리어\n시공", src: iconInteriorAsset.url, alt: "인테리어 시공 아이콘" },
-  { label: "이사\n업체", src: iconMovingAsset.url, alt: "이사 업체 아이콘" },
-  { label: "입주\n청소", src: iconCleaningAsset.url, alt: "입주 청소 아이콘" },
-  { label: "인터넷\n설치", src: iconWifiAsset.url, alt: "인터넷 설치 아이콘" },
-  { label: "가전\n렌탈", src: iconWaterAsset.url, alt: "가전 렌탈 아이콘" },
+  { label: "인테리어\n시공", src: iconInterior, alt: "인테리어 시공 아이콘" },
+  { label: "이사\n업체", src: iconMoving, alt: "이사 업체 아이콘" },
+  { label: "입주\n청소", src: iconCleaning, alt: "입주 청소 아이콘" },
+  { label: "인터넷\n설치", src: iconWifi, alt: "인터넷 설치 아이콘" },
+  { label: "가전\n렌탈", src: iconWater, alt: "가전 렌탈 아이콘" },
 ];
 
 const BENEFITS = [
   {
-    Icon: Search,
+    icon: iconMagnifyingGlass,
     title: "이사 필수 서비스 대신 접수",
     desc: "인테리어 시공, 이사 업체, 입주 청소 등 필요한 서비스를\n대신 신청해드려요",
   },
   {
-    Icon: Calendar,
+    icon: iconCalendarIcon,
     title: "이사 일정 관리",
     desc: "이사일에 맞춰 무엇을 준비할지 짚어드려요",
   },
   {
-    Icon: MessageSquare,
+    icon: iconBubbleChat,
     title: "궁금한건 뭐든지",
     desc: "업체 선정 기준부터 이사 관련 궁금한 점까지, 편하게 물어보세요",
   },
@@ -37,23 +41,20 @@ const BENEFITS = [
 export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
   return (
     <div>
-      {/* 안내 배너 */}
+      {/* 안내 배너 — 피그마 노드 127:6770, bg #f2f4f6 / text #6c7180 */}
       <div className="px-4 pt-4">
         <div className="mx-auto w-full max-w-[430px]">
-          <div className="mx-auto flex w-fit gap-2 rounded-xl bg-muted px-4 py-3 text-[12px] font-semibold leading-[1.5] text-ink-sub">
-            <svg
-              viewBox="0 0 16 16"
+          <div className="mx-auto flex w-fit gap-[5px] rounded-[8px] bg-[#f2f4f6] py-3 pl-3 pr-4 text-[12px] font-semibold leading-[16px] text-[#6c7180]">
+            <img
+              src={iconInfoCircle}
+              alt=""
               aria-hidden
-              className="mt-0.5 size-4 shrink-0 text-ink-sub"
-            >
-              <circle cx="8" cy="8" r="8" fill="currentColor" />
-              <circle cx="8" cy="5" r="1.25" fill="white" />
-              <rect x="6.75" y="7" width="2.5" height="5" rx="1" fill="white" />
-            </svg>
-            <p className="whitespace-nowrap">
-              이사 예정 고객님께만 드리는 안내예요.
-              <br />
-              나가시면 다시 볼 수 없으니, 지금 바로 신청하세요!
+              loading="lazy"
+              className="mt-0.5 size-[17px] shrink-0"
+            />
+            <p className="whitespace-pre-line">
+              이사 예정 고객님께만 드리는 안내예요.{"\n"}
+              나가시면 다시 보실 수 없어요. 잊지 않도록 스크랩해 두세요.
             </p>
           </div>
         </div>
@@ -62,55 +63,64 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
       {/* 히어로 */}
       <section className="bg-gradient-to-b from-background via-brand-softer to-brand-soft/60 pb-10 pt-10 text-center">
         <div className="mx-auto w-full max-w-[430px] px-5">
-          <img
-            src={movingPlannerBadgeAsset.url}
-            alt="오늘의집 무빙플래너"
-            loading="lazy"
-            className="mx-auto h-[26px] w-auto"
-          />
-          <h1 className="mt-5 text-[28px] font-bold leading-[1.32] tracking-tight text-ink">
+          {/* 배지 — 피그마 노드 127:6767, bg white / border #0aa5ff / text #0aa5ff */}
+          <div className="mx-auto flex h-[26px] w-fit items-center justify-center gap-[5px] rounded-[12px] border-[0.75px] border-[#0aa5ff] bg-white px-3 py-1">
+            <img
+              src={iconShippingBox}
+              alt=""
+              aria-hidden
+              loading="lazy"
+              className="size-4"
+            />
+            <span className="text-[12px] font-bold text-[#0aa5ff]">오늘의집 무빙플래너</span>
+          </div>
+
+          {/* 히어로 타이틀 — 피그마 노드 127:6766, 30px/40px Bold #17171c */}
+          <h1 className="mt-5 text-[30px] font-bold leading-[40px] tracking-[-0.6px] text-[#17171c]">
             복잡한 이사 준비,
             <br />
             알아서 챙겨드려요
           </h1>
 
+          {/* CTA — 피그마 노드 127:6773, bg #1c8efa / radius 11.216px / h49 w210 */}
           <button
             type="button"
             onClick={onCtaClick}
-            className="animate-cta-blink mx-auto mt-7 flex h-14 w-[calc(100%-60px)] max-w-[320px] items-center justify-center rounded-[22px] border-2 border-brand bg-brand px-6 text-[17px] font-bold text-brand-foreground"
+            className="animate-cta-blink mx-auto mt-7 flex h-[56px] w-[240px] items-center justify-center rounded-[12px] border-2 border-transparent bg-[#1c8efa] px-6 text-[17px] font-semibold tracking-[-0.24px] text-white"
           >
             지금 무료로 견적 받기
             <span className="ml-2">&gt;</span>
           </button>
 
           <img
-            src={movingCharacterAsset.url}
+            src={movingCharacter}
             alt="오늘의집 무빙플래너 캐릭터"
             loading="lazy"
-            className="mx-auto mt-8 h-[180px] w-[180px] object-contain"
+            className="mx-auto mt-8 h-[152px] w-[152px] object-contain"
           />
 
-          <p className="mt-7 text-[16px] font-bold text-ink">
+          {/* 서브 타이틀 — 피그마 노드 127:6764/6763, #121212 14px Bold + #5b6577 12px */}
+          <p className="mt-7 text-[14px] font-bold tracking-[-0.28px] text-[#121212]">
             결혼엔 웨딩플래너, 이사엔 무빙플래너
           </p>
-          <p className="mt-4 text-[14px] leading-[1.6] text-ink-sub">
-            필요한 서비스만 고르면
+          <p className="mt-4 text-[12px] leading-[18px] tracking-[-0.24px] text-[#5b6577]">
+            이사 준비, 제대로 아는 곳에 맡기고 싶다면
             <br />
-            전담 플래너가 상담부터 접수까지 대신 해드려요
+            검증된 업체부터 일정까지 <span className="font-bold">오늘의집 무빙플래너가 1:1로 챙겨드려요</span>
           </p>
 
-          {/* 서비스 아이콘 5종 */}
-          <div className="mt-8 rounded-2xl border border-brand/50 bg-background px-3 py-5">
-            <ul className="grid grid-cols-5 gap-1">
+          {/* 서비스 아이콘 5종 — 피그마 노드 127:6776, 카드 343px / 아이콘 줄 311px 고정폭 */}
+          <div className="mx-auto mt-8 w-[343px] rounded-[8px] border border-[#00a1ff] bg-[#f8faff] p-3">
+            <ul className="mx-auto flex w-[311px] items-center justify-between">
               {ICONS.map((item) => (
-                <li key={item.label} className="flex flex-col items-center gap-2">
+                <li key={item.label} className="flex w-[66px] flex-col items-center">
                   <img
                     src={item.src}
                     alt={item.alt}
                     loading="lazy"
                     className="size-9 object-contain"
                   />
-                  <span className="whitespace-pre-line text-[11px] font-medium leading-[1.3] text-ink">
+                  <span className="whitespace-pre-line text-[12px] leading-[16px] tracking-[-0.3px] text-[#141414]">
                     {item.label}
                   </span>
                 </li>
@@ -118,17 +128,19 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
             </ul>
           </div>
 
-          {/* 혜택 3종 */}
-          <ul className="mt-3 space-y-2.5">
-            {BENEFITS.map(({ Icon, title, desc }) => (
+          {/* 혜택 3종 — 피그마 노드 127:6797, bg #f8faff / 아이콘칩 bg white / title #141414 / desc #8c8c8c */}
+          <ul className="mx-auto mt-2 w-[343px] space-y-2">
+            {BENEFITS.map(({ icon, title, desc }) => (
               <li
                 key={title}
-                className="flex gap-3 rounded-2xl bg-background px-4 py-4 text-left"
+                className="flex items-center gap-3 rounded-[8px] bg-[#f8faff] p-3 text-left"
               >
-                <Icon className="mt-1 size-5 shrink-0 text-brand" />
+                <span className="flex shrink-0 items-center justify-center rounded-[8px] bg-white p-2">
+                  <img src={icon} alt="" aria-hidden loading="lazy" className="size-5" />
+                </span>
                 <div>
-                  <p className="text-[15px] font-bold text-ink">{title}</p>
-                  <p className="mt-1 whitespace-pre-line text-[13px] leading-[1.5] text-ink-sub">{desc}</p>
+                  <p className="text-[14px] font-semibold leading-[20px] tracking-[-0.3px] text-[#141414]">{title}</p>
+                  <p className="whitespace-pre-line text-[13px] leading-[18px] tracking-[-0.3px] text-[#8c8c8c]">{desc}</p>
                 </div>
               </li>
             ))}
@@ -136,23 +148,23 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
         </div>
       </section>
 
-      {/* 채팅 섹션 */}
-      <section className="py-12">
+      {/* 채팅 섹션 — 피그마 노드 127:6818, 타이틀 20px Bold / 서브 14px opacity-60 */}
+      <section className="py-10">
         <div className="mx-auto w-full max-w-[430px] px-5">
-          <h2 className="text-[22px] font-bold leading-[1.35] text-ink">
+          <h2 className="text-[20px] font-bold leading-[28px] tracking-[-0.3px] text-black">
             무빙플래너가 전부 대신 해드려요
           </h2>
-          <p className="mt-3 text-[14px] leading-[1.6] text-ink-sub">
+          <p className="mt-1 text-[14px] leading-[20px] tracking-[-0.3px] text-black/60">
             막막한 이사준비, 이제 혼자 검색하지 않아도 돼요.
             <br />
             이제 무빙플래너에게 그냥 맡기세요.
           </p>
 
           <img
-            src={kakaoChatAsset.url}
+            src={kakaoChat}
             alt="무빙플래너 채널 카카오톡 상담 예시"
             loading="lazy"
-            className="mt-6 w-full rounded-2xl"
+            className="mx-auto mt-6 w-[280px] rounded-[12px]"
           />
         </div>
       </section>
@@ -160,171 +172,22 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
       {/* 일정표 섹션 */}
       <section className="py-12">
         <div className="mx-auto w-full max-w-[430px] px-5">
-          <h2 className="text-[22px] font-bold leading-[1.35] text-ink">
+          <h2 className="text-[20px] font-bold leading-[28px] tracking-[-0.3px] text-black">
             맞춤 일정표로, 놓치는 일 없이!
           </h2>
-          <p className="mt-3 text-[14px] leading-[1.6] text-ink-sub">
+          <p className="mt-1 text-[14px] leading-[20px] tracking-[-0.3px] text-black/60">
             이사업체 견적부터 명의변경까지,
             <br />
             놓치기 쉬운 일들을 이사 날짜에 맞춰 알려드려요!
           </p>
 
-          {/* 일정표 목업 — 상단만 보이고 아래로 페이드아웃 */}
-          <div className="relative mt-6 max-h-[600px] overflow-hidden rounded-2xl border border-border bg-background shadow-sm">
-            <div className="px-4 pb-10 pt-4">
-              {/* 상단 헤더 */}
-              <div className="flex items-center justify-between">
-                <img
-                  src={movingPlannerBadgeAsset.url}
-                  alt="오늘의집 무빙플래너"
-                  loading="lazy"
-                  className="h-[26px] w-auto"
-                />
-                <span className="inline-flex items-center rounded-full bg-brand-soft px-2.5 py-1 text-[11px] font-bold text-brand">
-                  플래닝중
-                </span>
-              </div>
-
-              {/* 타이틀 */}
-              <p className="mt-4 text-[22px] font-extrabold tracking-tight text-ink">
-                나의 <span className="text-brand">새집맞이 일정표</span>
-              </p>
-              <div className="mt-2 flex items-baseline gap-2">
-                <span className="text-[26px] font-extrabold text-brand">D-20</span>
-                <span className="text-[13px] font-bold text-ink">9월 16일(수)</span>
-              </div>
-
-              {/* 전체 진행바 */}
-              <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-muted">
-                <div className="h-full w-[35%] rounded-full bg-brand" />
-              </div>
-              <div className="mt-1.5 flex items-center justify-between text-[12px]">
-                <span className="text-ink-sub">진행 상황</span>
-                <span className="font-bold text-ink">
-                  <span className="text-brand">6</span> / 17 완료
-                </span>
-              </div>
-
-              {/* 무빙플래너 대행 */}
-              <div className="mt-4 flex items-center justify-between border-t border-border pt-4">
-                <span className="text-[13px] font-bold text-ink">
-                  무빙플래너 대행 <span className="text-brand">1/3</span>
-                </span>
-                <span className="text-[10px] text-ink-sub">
-                  신청 전 · 신청완료 · 매칭중 · 매칭완료
-                </span>
-              </div>
-
-              <ul className="mt-3 space-y-3">
-                <li>
-                  <div className="flex items-center justify-between">
-                    <span className="flex items-center gap-2 text-[13px] text-ink">
-                      <img
-                        src={iconMovingAsset.url}
-                        alt="이사 업체"
-                        loading="lazy"
-                        className="size-4 object-contain"
-                      />
-                      이사 업체 견적 신청하기
-                    </span>
-                    <span className="rounded-full bg-orange-100 px-2 py-0.5 text-[10px] font-bold text-orange-600">
-                      매칭중
-                    </span>
-                  </div>
-                  <div className="mt-1.5 flex gap-1">
-                    <span className="h-1.5 flex-1 rounded-full bg-orange-500" />
-                    <span className="h-1.5 flex-1 rounded-full bg-orange-500" />
-                    <span className="h-1.5 flex-1 rounded-full bg-muted" />
-                  </div>
-                </li>
-                <li>
-                  <div className="flex items-center justify-between">
-                    <span className="flex items-center gap-2 text-[13px] text-ink">
-                      <img
-                        src={iconCleaningAsset.url}
-                        alt="입주 청소"
-                        loading="lazy"
-                        className="size-4 object-contain"
-                      />
-                      청소 견적 신청하기
-                    </span>
-                    <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-bold text-emerald-600">
-                      매칭완료
-                    </span>
-                  </div>
-                  <div className="mt-1.5 flex gap-1">
-                    <span className="h-1.5 flex-1 rounded-full bg-emerald-500" />
-                    <span className="h-1.5 flex-1 rounded-full bg-emerald-500" />
-                    <span className="h-1.5 flex-1 rounded-full bg-emerald-500" />
-                  </div>
-                </li>
-                <li>
-                  <div className="flex items-center justify-between">
-                    <span className="flex items-center gap-2 text-[13px] text-ink">
-                      <img
-                        src={iconInteriorAsset.url}
-                        alt="집 전체 시공"
-                        loading="lazy"
-                        className="size-4 object-contain"
-                      />
-                      집 전체 시공 견적 신청하기
-                    </span>
-                    <span className="rounded-full bg-brand-soft px-2 py-0.5 text-[10px] font-bold text-brand">
-                      신청완료
-                    </span>
-                  </div>
-                  <div className="mt-1.5 flex gap-1">
-                    <span className="h-1.5 flex-1 rounded-full bg-brand" />
-                    <span className="h-1.5 flex-1 rounded-full bg-brand" />
-                    <span className="h-1.5 flex-1 rounded-full bg-muted" />
-                  </div>
-                </li>
-              </ul>
-
-              {/* 직접 진행 */}
-              <div className="mt-4 flex items-center justify-between rounded-xl bg-orange-50 px-4 py-3">
-                <span className="text-[13px] font-bold text-ink">
-                  직접 진행 <span className="text-orange-500">5/14</span>
-                </span>
-                <span className="flex items-center text-[12px] font-bold text-orange-500">
-                  전체보기
-                  <ChevronRight className="size-3.5" />
-                </span>
-              </div>
-
-              {/* 완주 보너스 */}
-              <div className="mt-2.5 flex items-center gap-2 rounded-xl bg-muted px-4 py-3.5 text-[13px] font-medium text-ink-sub">
-                <Gift className="size-4" />
-                완주 보너스
-                <span className="text-ink-sub/60">?</span>
-              </div>
-
-              {/* 대행 진행 카드 (일부만 노출) */}
-              <div className="mt-4 rounded-2xl bg-brand-soft p-4">
-                <span className="inline-flex rounded-md bg-brand px-1.5 py-0.5 text-[10px] font-extrabold text-brand-foreground">
-                  대행
-                </span>
-                <p className="mt-1.5 text-[15px] font-bold text-ink">
-                  무빙플래너가 대신 진행 중이에요
-                </p>
-                <p className="mt-1 text-[12px] leading-[1.5] text-ink-sub">
-                  신청하신 서비스의 진행 상태예요. 매칭 상태는 무빙플래너가 관리해요.
-                </p>
-                <div className="mt-3 rounded-xl border-l-4 border-emerald-500 bg-background px-4 py-3.5">
-                  <div className="flex items-center justify-between">
-                    <span className="text-[14px] font-bold text-ink">청소 견적 신청하기</span>
-                    <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-bold text-emerald-600">
-                      매칭완료
-                    </span>
-                  </div>
-                  <p className="mt-1 text-[12px] text-ink-sub">매칭이 끝났어요.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* 하단 페이드아웃 — 배경과 자연스럽게 섞임 */}
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent via-background/80 to-background" />
-          </div>
+          {/* 일정표 목업 — 페이드아웃 포함된 이미지 그대로 사용, 좌우 패딩 상쇄해 화면 폭 꽉 채움 */}
+          <img
+            src={scheduleMockup}
+            alt="맞춤 일정표 미리보기"
+            loading="lazy"
+            className="-mx-5 mt-6 w-[calc(100%+40px)]"
+          />
         </div>
       </section>
     </div>
