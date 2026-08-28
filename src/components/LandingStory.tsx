@@ -53,7 +53,9 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
             <p>
               이사 예정 고객님께만 드리는 안내예요.
               <br />
-              나가시면 다시 볼 수 없으니, 지금 바로 신청하세요!
+              나가시면 다시 볼 수 없으니,
+              <br />
+              지금 바로 신청하세요!
             </p>
           </div>
         </div>
