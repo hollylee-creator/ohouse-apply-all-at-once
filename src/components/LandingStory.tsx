@@ -40,7 +40,7 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
       {/* 안내 배너 */}
       <div className="px-4 pt-4">
         <div className="mx-auto w-full max-w-[430px]">
-          <div className="mx-auto flex w-[calc(100%-90px)] max-w-[340px] gap-2 rounded-xl bg-muted px-4 py-3 text-[12px] font-semibold leading-[1.5] text-ink-sub">
+          <div className="mx-auto flex w-fit gap-2 rounded-xl bg-muted px-4 py-3 text-[12px] font-semibold leading-[1.5] text-ink-sub">
             <svg
               viewBox="0 0 16 16"
               aria-hidden
@@ -50,12 +50,10 @@ export function LandingStory({ onCtaClick }: { onCtaClick: () => void }) {
               <circle cx="8" cy="5" r="1.25" fill="white" />
               <rect x="6.75" y="7" width="2.5" height="5" rx="1" fill="white" />
             </svg>
-            <p>
+            <p className="whitespace-nowrap">
               이사 예정 고객님께만 드리는 안내예요.
               <br />
-              나가시면 다시 볼 수 없으니,
-              <br />
-              지금 바로 신청하세요!
+              나가시면 다시 볼 수 없으니, 지금 바로 신청하세요!
             </p>
           </div>
         </div>
